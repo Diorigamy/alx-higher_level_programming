@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Module defining a Square class """
+"""
+module documentation
+"""
+
 
 class Square():
-    """Square class"""
-
-    def __init__(self, size):
-        """size attribute initialization below"""
-        self.size = size
+    """
+    An empty Square class
+    """
+    pass
