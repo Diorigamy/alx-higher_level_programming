@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Defining an wmpty  class """
+""" module definition"""
 
-class square():
+class Square():
     """empty class"""
     pass
