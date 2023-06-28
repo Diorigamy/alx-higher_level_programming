@@ -1,50 +1,50 @@
 #!/usr/bin/python3
+"""
+module documentation
+"""
+
 
 class Square():
-    """Square class"""
+    """
+    A class that defines a square
+    """
 
-    def __init__(self, size=0, position=(0,0)):
-        size = self.size
-        position = self.poaition
+    def __init__(self, size=0):
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        self.__size = size
 
     @property
     def size(self):
         return self.__size
 
     @size.setter
-    """setting size  property"""
     def size(self, value):
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-          value =  self.__size
+        if value < 0:
+            raise ValueErro("size must be >= 0")
 
-    @property
-    def position(self):
-        return self.__position
+        self.__size = value
 
-    @position.setter
-    def position(self, value):
-         if len(value) != 2 or type(value) != tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value[0]) != int or value[0] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value[1]) != int or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
-        
     def area(self):
-        """calculating a squares area"""
+        """
+        calculates and returns the area of a square
+
+        Returns:
+            int: The area of the square
+        """
         return self.__size ** 2
 
     def my_print(self):
-        """print function"""
         if self.__size == 0:
             print()
-         else:
-            print('\n'*self.__position[1], end='')
-            for i in range(self.__size):
-                print(' '*self.__position[0], end='')
-                print('#'*self.__size)
+            return None
+
+        for w in range(self.__size):
+            for x in range(self.__size):
+                print("#", end="")
+            print()

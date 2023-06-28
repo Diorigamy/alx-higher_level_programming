@@ -6,6 +6,14 @@ module documentation
 
 class Square():
     """
-    An empty Square class
+    A class that defines a Square
     """
-    pass
+
+    def __init__(self, size):
+        """
+        Initializes a Square instance.
+
+        Args:
+             size (int): size of the square
+        """
+        self.__size = size
