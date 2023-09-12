@@ -1,12 +1,9 @@
 #!/usr/bin/node
-
-const args = process.argv.slice(2); // Remove the first 2 arguments
-function findSecondBiggest (numbers) {
-  if (numbers.length <= 1) {
-    return 0;
-  }
-  numbers = numbers.map(Number); // convert string args tonumbers
-  numbers.sort((a, b) => b - a); // sort the nos in desc order
-  return numbers[1]; // return the 2nd biggest element
+if (process.argv.length <= 3) {
+  console.log(0);
+} else {
+  const args = process.argv.map(Number)
+    .slice(2, process.argv.length)
+    .sort((a, b) => a - b);
+  console.log(args[args.length - 2]);
 }
-console.log(findSecondBiggest(args));

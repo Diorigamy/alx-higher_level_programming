@@ -1,11 +1,11 @@
 #!/usr/bin/node
-
 const { argv } = require('process');
-const x = argv[2];
-if (isNaN(x) === true) {
-  console.log('Missing number of occurrences');
-} else {
-  for (let i = 0; i < x; i++) {
+const occurence = Number(argv[2]);
+const display = () => {
+  for (let i = 0; i < occurence; i++) {
     console.log('C is fun');
   }
-}
+};
+isNaN(occurence)
+  ? (console.log('Missing number of occurrences'))
+  : (display());
